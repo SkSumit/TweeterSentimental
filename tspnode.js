@@ -16,7 +16,7 @@ let sentimentalAnalysis = [];
 let sentimentalAnalysisTweet = [];
 let sentimentalAnalysisScore = [];
 
-const anal = (name, callback) => {
+const analysis = (name, callback) => {
   let params = { screen_name: name };
 
   client.get("statuses/user_timeline", params, function (
@@ -29,7 +29,7 @@ const anal = (name, callback) => {
 
       // ?do you know Array.forEach? if not then search
       tweets.forEach((tweet) => {
-        // declaring object to store temporary response
+        // declaring array to store temporary response
 
         let temp = [];
         temp.tweet = tweet.text;
@@ -58,4 +58,4 @@ const anal = (name, callback) => {
   });
 };
 
-module.exports = anal;
+module.exports = analysis;

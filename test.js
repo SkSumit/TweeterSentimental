@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const anal = require("./tspnode");
+const analysis = require("./tspnode");
 
 const port =   process.env.PORT || 3000 
 
@@ -21,7 +21,7 @@ app.get("/tsp", (req, res) => {
     });
   }
 
-  anal(req.query.search, (error, data) => {
+  analysis(req.query.search, (error, data) => {
     if (error) {
       return res.send({
         error: "Cannot Find Given Address",
